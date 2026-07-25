@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para o amor da minha vida ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= CANVAS DE PARTÍCULAS (corações e pétalas caindo) ================= -->
+<canvas id="particlesCanvas"></canvas>
+
+<!-- ================= TELA DE CARREGAMENTO ================= -->
+<section id="loadingScreen" class="screen">
+  <div class="loading-heart">
+    <svg viewBox="0 0 32 29" class="heart-svg pulsing">
+      <path d="M16 29C16 29 0 19.5 0 9.3C0 3 4.7 0 9 0C12.4 0 14.8 1.9 16 4.2C17.2 1.9 19.6 0 23 0C27.3 0 32 3 32 9.3C32 19.5 16 29 16 29Z"/>
+    </svg>
+  </div>
+  <p class="loading-text">Uma surpresa feita especialmente para você... ❤️</p>
+  <button id="openHeartBtn" class="btn-gold hidden">Abrir meu coração ❤️</button>
+</section>
+
+<!-- ================= CONTEÚDO PRINCIPAL ================= -->
+<main id="mainContent" class="hidden">
+
+  <!-- Flores decorativas nos cantos -->
+  <div class="corner-flower top-left">🌸</div>
+  <div class="corner-flower top-right">🌷</div>
+  <div class="corner-flower bottom-left">🌹</div>
+  <div class="corner-flower bottom-right">🌸</div>
+
+  <!-- Botão de música -->
+  <button id="musicBtn" class="music-btn" aria-label="Tocar música">
+    <span id="musicIcon">🎵</span>
+  </button>
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero-section reveal">
+    <h1 class="title-script">Para o amor da minha vida ❤️</h1>
+
+    <div class="couple-photo-frame">
+      <div class="photo-glow"></div>
+      <img src="images/foto4.jpg" alt="Foto do casal" class="couple-photo">
+    </div>
+
+    <div class="counter-box">
+      <p class="counter-label">Estamos escrevendo nossa história há...</p>
+      <div class="counter-grid">
+        <div class="counter-item">
+          <span id="c-days" class="counter-num">000</span>
+          <span class="counter-unit">dias</span>
+        </div>
+        <div class="counter-item">
+          <span id="c-hours" class="counter-num">00</span>
+          <span class="counter-unit">horas</span>
+        </div>
+        <div class="counter-item">
+          <span id="c-mins" class="counter-num">00</span>
+          <span class="counter-unit">min</span>
+        </div>
+        <div class="counter-item">
+          <span id="c-secs" class="counter-num">00</span>
+          <span class="counter-unit">seg</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">continue rolando ↓</div>
+  </section>
+
+  <!-- ---------- CARTA ---------- -->
+  <section class="letter-section reveal">
+    <div class="letter-paper">
+      <div class="wax-seal">❤</div>
+      <p id="letterText" class="letter-text"></p>
+      <span id="letterCursor" class="letter-cursor">|</span>
+    </div>
+
+    <button id="messageBtn" class="btn-gold">Leia uma mensagem especial</button>
+    <div id="messageBubble" class="message-bubble hidden">
+      <p id="messageText"></p>
+    </div>
+  </section>
+
+  <!-- ---------- GALERIA ---------- -->
+  <section class="gallery-section reveal">
+    <h2 class="section-title">Nossos momentos</h2>
+    <div class="gallery-grid">
+
+      <div class="polaroid" style="--rot:-5deg">
+        <img src="images/foto1.jpg" alt="Nós dois no espelho">
+        <p class="polaroid-caption">o começo de tudo</p>
+      </div>
+
+      <div class="polaroid" style="--rot:4deg">
+        <img src="images/foto5.jpg" alt="Nós dois ao sol">
+        <p class="polaroid-caption">dias de sol e riso</p>
+      </div>
+
+      <div class="polaroid polaroid-featured" style="--rot:-2deg">
+        <img src="images/foto2.jpg" alt="Nosso abraço">
+        <p class="polaroid-caption">seu abraço, meu lugar favorito</p>
+      </div>
+
+      <div class="polaroid" style="--rot:5deg">
+        <img src="images/foto3.jpg" alt="Nosso beijo">
+        <p class="polaroid-caption">momento perfeito</p>
+      </div>
+
+      <div class="polaroid" style="--rot:-6deg">
+        <img src="images/foto4.jpg" alt="Nós dois de amarelo">
+        <p class="polaroid-caption">para sempre nós dois</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- CÉU ESTRELADO ---------- -->
+  <section class="night-section reveal">
+    <div class="night-sky" id="nightSky">
+      <div class="moon"></div>
+    </div>
+    <p class="night-text">
+      Sempre amei o brilho da lua e das estrelas. Mas quando você apareceu,
+      agora é seu sorriso que me ilumina e aquece o meu coração.
+      Obrigado por iluminar o meu mundo.
+    </p>
+  </section>
+
+  <!-- ---------- JARDIM ---------- -->
+  <section class="garden-section reveal">
+    <div class="garden-flowers">
+      <span class="sway-flower">🌷</span>
+      <span class="sway-flower">🌹</span>
+      <span class="sway-flower">🌸</span>
+      <span class="sway-flower">🌼</span>
+      <span class="sway-flower">🌷</span>
+      <span class="sway-flower">🌹</span>
+    </div>
+    <p class="garden-text">
+      Desde quando você apareceu na minha vida, tudo tem mais cor,
+      e me mostrou como cada detalhe do mundo é perfeito.
+    </p>
+  </section>
+
+  <!-- ---------- SURPRESA FINAL ---------- -->
+  <section class="final-section reveal">
+    <button id="finalBtn" class="btn-final">Clique aqui para descobrir o quanto eu te amo ❤️</button>
+  </section>
+
+</main>
+
+<!-- ================= OVERLAY FINAL ================= -->
+<div id="finalOverlay" class="final-overlay hidden">
+  <canvas id="fireworksCanvas"></canvas>
+  <div class="giant-heart pulsing">
+    <svg viewBox="0 0 32 29" class="heart-svg">
+      <path d="M16 29C16 29 0 19.5 0 9.3C0 3 4.7 0 9 0C12.4 0 14.8 1.9 16 4.2C17.2 1.9 19.6 0 23 0C27.3 0 32 3 32 9.3C32 19.5 16 29 16 29Z"/>
+    </svg>
+  </div>
+  <h2 class="final-text-main">Eu te amo infinitamente.</h2>
+  <p class="final-text-sub hidden" id="finalSub">Obrigado por fazer parte da minha vida.</p>
+</div>
+
+<!-- Player de música de fundo (YouTube oculto) -->
+<div id="ytPlayer" class="yt-hidden"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+</body>
+</html>
